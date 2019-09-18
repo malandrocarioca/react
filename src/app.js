@@ -15,17 +15,19 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-console.log(store.getState());
-store.dispatch(addExpense({description: 'Water Bill', amount: 4500}));
-store.dispatch(addExpense({description: 'Gas Bill', createdAt: 1000}));
-store.dispatch(addExpense({description: 'Rent Bill', amount: 109500}));
+
+//for development and testing
+// console.log(store.getState());
+// store.dispatch(addExpense({description: 'Water Bill', amount: 4500}));
+// store.dispatch(addExpense({description: 'Gas Bill', createdAt: 1000}));
+// store.dispatch(addExpense({description: 'Rent Bill', amount: 109500}));
 
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses)
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+// console.log(visibleExpenses)
 
-//upi have to pass a single prop to the Provider  - store defined as variable above
+//api have to pass a single prop to the Provider  - store defined as variable above
 const jsx = (
     <Provider store= {store}>
         <AppRouter/>
