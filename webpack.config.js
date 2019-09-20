@@ -9,7 +9,7 @@ const CSSExtract = new ExtractTextPlugin('styles.css');
     return {
         entry: './src/app.js',
         output: {
-            path:path.join(__dirname, 'public'),
+            path:path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'
         },
         module: {
@@ -47,7 +47,8 @@ const CSSExtract = new ExtractTextPlugin('styles.css');
         devServer:{
             contentBase: path.join(__dirname, 'public'),
             //this is for react router.  we are handaling routing via client side code
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: '/dist/'
         }
     
     }
